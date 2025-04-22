@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package cb;
+
+option go_package = "gen/proto";
+
+service Greet {
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+  rpc ListConnections (ListConnectionsReq) returns (ListConnectionsResp) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+
+message ListConnectionsReq {
+}
+
+
+message ListConnectionsResp {
+  Data data = 1 [json_name = "data"];
+}
+
+message Data {
+  repeated Connection connections = 1 [json_name = "connections"];
+}
+
+
+message Connection {
+  string city = 1 [json_name = "City"];
+  string country = 2 [json_name = "Country"];
+  double lat = 3 [json_name = "Lat"];
+  double lon = 4 [json_name = "Lon"];
+  string admin_url = 5 [json_name = "AdminURL"];
+  string mgmt_url = 6 [json_name = "MgmtURL"];
+  string interface_name = 7 [json_name = "Interface name"];
+  int32 port = 8 [json_name = "Port"];
+  string region = 9 [json_name = "Region"];
+  string flag_url = 10 [json_name = "FlagURL"];
+}
