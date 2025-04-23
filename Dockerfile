@@ -20,11 +20,11 @@ FROM alpine:latest
 RUN apk add --no-cache bash curl tar
 
 # Install grpcurl
-RUN curl -sSL https://github.com/fullstorydev/grpcurl/releases/latest/download/grpcurl_1.9.3_linux_x86_64.tar.gz -o grpcurl.tar.gz && \
-    tar -xzf grpcurl.tar.gz && \
-    mv grpcurl /usr/local/bin/ && \
-    chmod +x /usr/local/bin/grpcurl && \
-    rm -f grpcurl.tar.gz
+# RUN curl -sSL https://github.com/fullstorydev/grpcurl/releases/latest/download/grpcurl_1.9.3_linux_x86_64.tar.gz -o grpcurl.tar.gz && \
+#     tar -xzf grpcurl.tar.gz && \
+#     mv grpcurl /usr/local/bin/ && \
+#     chmod +x /usr/local/bin/grpcurl && \
+#     rm -f grpcurl.tar.gz
 
 WORKDIR /
 
